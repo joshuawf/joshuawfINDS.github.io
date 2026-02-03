@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design Program | SCAD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Gotham', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            color: #000;
+        }
+        
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            color: #000;
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        
+        p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .hero {
+            background-color: #f5f5f5;
+            padding: 80px 0 60px 0;
+        }
+        
+        .two-column {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .two-column.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .column img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1em;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            padding-left: 25px;
+            margin-bottom: 12px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #d32f2f;
+            font-size: 1.5em;
+            line-height: 1;
+        }
+        
+        .two-column-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #2e3b8e;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #1f2a5f;
+        }
+        
+        .cta-section {
+            background-color: #f9f9f9;
+            text-align: left;
+            padding: 50px 0;
+        }
+        
+        .cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .cta-text {
+            flex: 1;
+        }
+        
+        .cta-button {
+            flex-shrink: 0;
+        }
+        
+        .study-abroad {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 60px 0;
+        }
+        
+        .study-abroad-text {
+            flex: 1;
+        }
+        
+        .study-abroad-stamp {
+            width: 200px;
+            height: 200px;
+            border: 3px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-align: center;
+            transform: rotate(-15deg);
+            flex-shrink: 0;
+        }
+        
+        .event-box {
+            background-color: #f5f5f5;
+            padding: 40px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column,
+            .two-column.reverse,
+            .study-abroad {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .two-column-list {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.6em;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .cta-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .study-abroad-stamp {
+                width: 150px;
+                height: 150px;
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Design spaces that AI can't</h1>
+            <p>AI-powered rendering systems can generate room concepts, color schemes, and furniture layouts in hours—work that once took weeks of manual drafting. But here's what they can't do: discern whether a space truly supports well-being, interpret cultural identity, or create the emotional connections that make interiors meaningful. AI can render mood. Only humans can design spaces people actually want to inhabit.</p>
+        </div>
+    </section>
+
+    <!-- Surroundings That Inspire Section -->
+    <section>
+        <div class="container">
+            <div class="two-column">
+                <div class="column">
+                    <h2>Surroundings that inspire human-centered design</h2>
+                    <p>At SCAD, you're immersed in thoughtfully designed learning environments built for critical research and imaginative creation. Within these spaces, you'll build a strong foundation in the competencies that algorithms cannot replicate—empathy, cultural literacy, and the ability to mediate between client aspirations and spatial reality.</p>
+                    <p>Through Interior Design Studio I: Exploring People and Space, you'll develop the human insight essential for creating environments that resonate with lived experience. You'll learn what AI can't teach: how to translate abstract concepts into three-dimensional compositions that honor both functional requirements and emotional coherence.</p>
+                </div>
+                <div class="column">
+                    <picture class="img-responsive">
+                        <img src="https://www.scad.edu/sites/default/files/styles/swarm16x9_768/public/Video/Video%20Thumbnails/SCADnow-online-2024-2025-video.jpg?itok=6QDjxucw&timestamp=1727124158" alt="SCAD interior design student" class="img-responsive" style="width: 100%; height: auto; display: block;">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Process Section -->
+    <section style="background-color: #fafafa;">
+        <div class="container">
+            <div class="two-column reverse">
+                <div class="column">
+                    <p>In Form, Space, and Order, you'll cultivate creative thinking about spatial relationships and architectural ordering systems—the conceptual foundation that transforms AI-generated visualizations into spaces with meaning and purpose. You'll master diagramming, drawing, and model-making processes that help you maintain creative authorship even as computational tools handle technical rendering.</p>
+                    <p>From studio classrooms and model shops to event spaces and material resource rooms, SCAD provides students everything they need to curate stellar interior design portfolios.</p>
+                </div>
+                <div class="column">
+                    <picture class="img-responsive">
+                        <img src="https://www.scad.edu/sites/default/files/styles/swarm2x1_1500/public/Academics/Interior%20design/Interior-Design-Liset-Robinson-faculty-Spring-2015-RP_02.jpg" alt="SCAD interior design students" class="img-responsive" style="width: 100%; height: auto; display: block;">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Resources Section -->
+    <section>
+        <div class="container">
+            <div class="two-column">
+                <div class="column">
+                    <picture class="img-responsive">
+                        <img src="https://www.scad.edu/sites/default/files/styles/swarm16x9_768/public/Academics/Industrial%20design/scad-idus-alumni-jake-phillips-2025.jpg?itok=xX3vm7Ke&timestamp=1754590233" alt="SCAD interior design student" class="img-responsive" style="width: 100%; height: auto; display: block;">
+                    </picture>
+                </div>
+                <div class="column">
+                    <h3>Master AI tools that enhance your creative vision</h3>
+                    <p>SCAD provides full access to Adobe Creative Cloud—always up-to-date and free for download—giving you the industry's most powerful AI-enhanced design tools at your fingertips.</p>
+                    
+                    <p><strong>Adobe Firefly</strong> enables you to rapidly generate mood boards, texture variations, and spatial concepts through generative AI, accelerating your ideation process while maintaining creative control.</p>
+                    
+                    <p><strong>Photoshop's AI features</strong> including generative fill, neural filters, and object selection streamline rendering and visualization tasks, allowing you to focus on design decisions rather than technical execution.</p>
+                    
+                    <p><strong>Adobe Sensei technology</strong> powers intelligent features across Illustrator, InDesign, and Dimension, automating repetitive tasks while you concentrate on the spatial relationships, material selections, and human-centered design decisions that AI cannot make.</p>
+                    
+                    <p>You'll learn to leverage these AI capabilities strategically—using them to visualize concepts faster while applying the empathy, cultural literacy, and sensory interpretation that define meaningful interior design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applied AI Minor Section -->
+    <section style="background-color: #fafafa;">
+        <div class="container">
+            <div class="two-column reverse">
+                <div class="column">
+                    <h2>Applied AI minor</h2>
+                    <p>The applied AI minor empowers students to integrate AI into creative workflows across any SCAD discipline. Through hands-on courses in ethics, intelligent tools, creative computing, and agentic design, students deploy AI not just as a technology, but as a professional edge—enhancing their agility in fast-evolving creative industries.</p>
+                    <p style="font-size: 0.95em; margin-top: 25px;"><strong>Build expertise that sets you apart:</strong></p>
+                </div>
+                <div class="column">
+                    <picture class="img-responsive">
+                        <img src="https://www.scad.edu/sites/default/files/SAV-2025Summer-SCADServe-TideToTown-students-Roger-Moss.jpeg" alt="SCAD interior design students" class="img-responsive" style="width: 100%; height: auto; display: block;">
+                    </picture>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <ul style="max-width: 900px;">
+                    <li><strong>AI 101 Survey of AI Applications</strong> — From generative media to intelligent environments, students discover the expanding role of AI across industries and creative disciplines. Students analyze real-world examples and trends to build a broad, cross-sector understanding of what AI can do—and imagine what comes next.</li>
+                    
+                    <li><strong>AI 201 Creative Computing with AI</strong> — Students explore how to harness computing power for creativity, expression, and interactive design as they experiment with code, systems, and tools that bring intelligent behaviors to life.</li>
+                    
+                    <li><strong>DIGI 230 Ethics of Emerging Technology</strong> — In this course, students examine the social, cultural, and ethical impact of emerging technologies while developing a personal ethical code for designing responsible systems and experiences.</li>
+                    
+                    <li><strong>AI 295 Action Lab</strong> — In this high-velocity studio—where collaboration meets invention—students co-design AI-powered prototypes that tackle real-world challenges, spark dialogue, and push creative limits.</li>
+                    
+                    <li><strong>AI 301 Agentic Design</strong> — In this milestone course, students design autonomous agents that perceive, decide, and act—creating AI systems that feel intentional, responsive, and alive. From virtual assistants to expressive characters, each prototype explores how intelligence can be both deeply technical and profoundly human.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills That Keep You Essential Section -->
+    <section>
+        <div class="container">
+            <h2>Skills that keep you essential</h2>
+            <p>The interior design marketplace increasingly rewards interpersonal skills over procedural efficiency. At SCAD, you'll develop the communication, negotiation, and client relationship abilities that define professional value in an AI-augmented field:</p>
+            
+            <div class="two-column" style="margin-top: 40px;">
+                <div class="column">
+                    <ul>
+                        <li>Empathy and cultural reading that creates spaces aligned with human needs</li>
+                        <li>Client communication that translates technical concepts into emotional understanding</li>
+                        <li>Sensory interpretation of light, proportion, color, and atmosphere</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li>Cross-disciplinary expertise in sustainability and material innovation</li>
+                        <li>Creative authorship that controls AI tools rather than being replaced by them</li>
+                        <li>Trust-building that sustains design credibility in metrics-driven environments</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px;"><strong>The result?</strong> You'll graduate prepared to leverage AI for visualization while offering the empathy, experience, and human insight that create interiors worth experiencing.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2 style="margin-bottom: 15px;">Take the first step to becoming an interior designer</h2>
+                    <p style="margin-bottom: 0;">We'll tell you everything you need to know about landing your dream job in interior design. Just request more information from SCAD, and let us do the rest.</p>
+                </div>
+                <div class="cta-button">
+                    <a href="https://welcome.scad.edu/rfi" class="btn">Request information</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
